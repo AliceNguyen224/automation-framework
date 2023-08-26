@@ -38,10 +38,17 @@ public class LoginPageObject extends BasePage{
 		sendKeyToElement(driver, LoginPageLocator.PASSWORD, value);
 	}
 
-	public String getUnregisterEmailErrorMessage() {
-		waitForElementVisible(driver, LoginPageLocator.ERROR_UNREGISTER_MESSAGE);
-		return getTextElement(driver, LoginPageLocator.ERROR_UNREGISTER_MESSAGE);
+	public String getIncorrectCredetialsErrorMessage() {
+		waitForElementVisible(driver, LoginPageLocator.INCORRECT_CREDETIALS);
+		return getTextElement(driver, LoginPageLocator.INCORRECT_CREDETIALS);
 	}
+
+	public void clickToRegisterButton() {
+		waitForElementClickable(driver, LoginPageLocator.REGISTER_BUTTON);
+		clickToElement(driver, LoginPageLocator.REGISTER_BUTTON);
+	}
+
+
 
 	
 
